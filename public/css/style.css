@@ -1,0 +1,203 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    max-width: 1920px;
+    min-width: 1440px;
+    background-color: var(--background-color);
+}
+
+/* Global variable */
+:root {
+    --my-fontColor: #424242;
+    --background-color: #EAE9EE;
+}
+
+.root {
+    width: 100%;
+    background-color: var(--background-color);
+}
+/* Header */
+.header {
+    width: 100%;
+    height: 80px;
+    padding: 16px 32px;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--background-color);
+    position: fixed;
+    top:0;
+    left:0;
+} 
+
+.header__circle {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.header__navigation {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    padding: 0 40px;
+}
+
+.header__navigation > a {
+    text-decoration: none;
+    font-family: 'Quicksand';
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--my-fontColor);
+    transition: color 0.2s;
+}
+.header__navigation > a:hover{
+    color: #00838F;
+}
+.header__info {
+    display: flex;
+    gap: 16px;
+}
+
+.header__circle {
+    background-color: #D9D9D9;
+}
+
+.header__info--form {
+    width: 329px;
+    height: 48px;
+    background-color: var(--background-color);
+    border-radius: 128px;
+    display: flex;
+    align-items: center;
+    padding: 0 8px;
+    gap: 16px;
+    border: 2px solid #FFFFFF;
+}
+.header__info--form img {
+    width: 16px;
+    height: 16px;
+}
+.header__info--form input{
+    width: 80%;
+    height: 44px;
+    border-style: none;
+    outline: none;
+    background-color: var(--background-color);
+}
+
+.header__info--form input::placeholder {
+    text-decoration: none;
+    font-family: 'Quicksand';
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--my-fontColor);
+}
+
+.header__info--logo {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #FFFFFF;
+    position:relative;
+}
+.header__info--logo::before{
+    content:'';
+    width: 100%;
+    height: 100%;
+    border:0.5px solid #00838F;
+    position:absolute;
+    border-radius:50%;
+    opacity: 1;
+    transition: opacity 0.5s linear;
+    opacity: 0;
+}
+.header__info--logo:hover::before{
+    opacity: 1;
+}
+/* ClassList JS */
+.colorOfHeader{
+    color:#00838F !important;
+}
+
+/* Herosection */
+.herosection {
+    display: flex;
+    width: 100%;
+    padding: 0 144px 0 148px;
+    margin-top: calc(164px + 80px);
+    justify-content:space-between;
+    position:relative;
+    background-color: var(--background-color);
+}
+
+.herosection__content > h1 {
+    font-family: 'Quicksand';
+    font-weight: 400;
+    font-size: 57px;
+    line-height: 64px;
+    letter-spacing: -0.0025em;
+    color: #424242;
+    margin-bottom: 40px;    
+}
+.herosection__content > p{
+    font-family: 'Quicksand';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.005em;
+    color: #616161;
+    margin-bottom:40px;
+}
+.herosection__content > button {
+    padding:10px 24px;
+    background: #00838F;
+    box-shadow: -9px -6px 25px #FFFFFF, 6px 7px 30px rgba(0, 0, 0, 0.25);
+    color:white;
+    border:#00838F;
+    border-radius: 4px;
+}
+.herosection__content--myButton{
+    position: relative;
+    z-index:1;
+    overflow:hidden;
+}
+.herosection__content--myButton > span {
+    position:relative;
+    z-index:3;
+}
+.herosection__content--myButton::before{
+    content:'';
+    position:absolute;
+    width: 100%;
+    height:100%;
+    background-color:orange;
+    top:100%;
+    left:0; 
+    transition-property: top opacity;
+    transition-duration:0.5s;
+    transition-timing-function: linear;
+    z-index: 2;
+    opacity:0;
+}
+.herosection__content--myButton:hover::before{
+    top:0;
+    opacity:1;
+}
+#status_position{
+    position:absolute;
+    top:25%;
+    right:38px;
+}
+
+/* Update: thuộc  tính transition không hoạt động đúng yêu cầu */
